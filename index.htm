@@ -1,8 +1,58 @@
 <!doctype html>
 <html>
+<style>
 
+    .container {
+    display: grid;
+    grid-template-rows: 80px auto 1fr auto 50px;
+    grid-template-columns: 1fr 4fr 1fr;
+    height: 100vh;
+    grid-template-areas:
+        "header      header      header"
+        "left-aside  banner      right-aside"
+        "left-aside  main        right-aside"
+        "left-aside  low-content right-aside"
+        "footer      footer      footer";
+    grid-gap: 10px;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+@media (max-width: 678px) {
+    .container {
+        grid-template-rows: 50px 50px 50px 1fr 50px 50px 50px;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "banner"
+            "left-aside"
+            "main"
+            "right-aside"
+            "low-content"
+            "footer";
+    }
+}
+.header {    grid-area: header;  background-color: orange; } 
+  .banner {    grid-area: banner;  background-color: red;}
+  .left-aside {    grid-area: left-aside; background-color: green; }
+  .main {    grid-area: main;  background-color: blue;}
+  .right-aside {    grid-area: right-aside;  background-color: orange;}
+  .low-content {    grid-area: low-content;  background-color: green;}
+  .footer {    grid-area: footer;  background-color: blue; }
+
+}
+
+</style>
 <body>
-    <h1>Hej världen</h1>
-    <p>Hej hej!</p>
+    <div class="container">
+        <div class="header">header</div>
+        <div class="banner">banner</div>
+        <div class="left-aside">left aside</div>
+        <div class="main">main</div>
+        <div class="right-aside"> right</div>
+        <div class="low-content"> low</div>
+        <div class="footer"> footer </div>
+
 </body>
 </html>
